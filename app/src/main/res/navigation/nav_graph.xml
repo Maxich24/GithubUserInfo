@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/usersListFragment">
+
+    <fragment
+        android:id="@+id/usersListFragment"
+        android:name="com.example.githubuserinfo.view.userlist.UsersListFragment"
+        android:label="UsersListFragment" >
+        <action
+            android:id="@+id/action_usersListFragment_to_userDetailsFragment"
+            app:destination="@id/userDetailsFragment" />
+        <action
+            android:id="@+id/action_usersListFragment_to_savedUsersListFragment"
+            app:destination="@id/savedUsersListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetailsFragment"
+        android:name="com.example.githubuserinfo.view.userdetails.UserDetailsFragment"
+        android:label="UserDetailsFragment" >
+        <argument
+            android:name="login"
+            app:argType="string"
+            android:defaultValue="maxich24" />
+        <action
+            android:id="@+id/action_userDetailsFragment_to_savedUsersListFragment"
+            app:destination="@id/savedUsersListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedUsersListFragment"
+        android:name="com.example.githubuserinfo.view.savedusers.SavedUsersListFragment"
+        android:label="SavedUsersListFragment" />
+</navigation>
